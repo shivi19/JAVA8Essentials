@@ -14,7 +14,6 @@ public class FilterDemo
 
         res.forEach(integer -> System.out.println(integer));
 
-
         List<String> cities = Arrays.asList("Mumbai", "delhi", "kolkata", "Bangalore");
 
         List<String> length = cities.stream()
@@ -28,9 +27,5 @@ public class FilterDemo
         long count = cities.stream().filter(s -> s.length() > 6).count();
 
         System.out.println(count);
-
-
-
-
     }
 }

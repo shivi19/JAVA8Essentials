@@ -1,4 +1,4 @@
-package com.shivangi;
+package com.shivangi.POJO;
 
 public class Employee
 {

@@ -23,7 +23,6 @@ public class FindDuplicate {
         Set<String> uniqueString = new HashSet<>();
         Set<String> duplicateString = stringList.stream()
                 .filter(integer -> !uniqueString.add(integer)).collect(Collectors.toSet());
-
         duplicateString.forEach(i -> System.out.println(i));
     }
 }
