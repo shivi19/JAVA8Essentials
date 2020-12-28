@@ -2,9 +2,7 @@ package com.shivangi;
 
 import com.shivangi.POJO.Employee;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class StreamSorted
@@ -30,6 +28,11 @@ public class StreamSorted
         employeeList.add(employee3);
         employeeList.add(employee4);
         employeeList.add(employee5);
+
+        Map<String, Employee> dummyMap = employeeList.stream().collect(Collectors.toMap(i->i.getEmployeeName(), x->x,(oldValue, newValue) -> newValue,
+                LinkedHashMap::new));
+
+        dummyMap.forEach((x,y) -> System.out.println(x+" employee "+y));
 
         List<Employee> sortedName = employeeList.stream().sorted((a,b) -> a.getEmployeeName().compareTo(b.getEmployeeName())).collect(Collectors.toList());
         sortedName.forEach(integer -> System.out.println(integer.getEmployeeName()));
