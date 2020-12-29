@@ -35,6 +35,15 @@ public class StreamDemo
                 .collect(Collectors.groupingBy(employee -> employee.getDepartment()));
 
         deptGroup.forEach((k, v) -> System.out.println((k + ":" + v)));
+
+
+        // compute salary by employee
+
+        long salarySum = employeeList.stream().collect(Collectors.summingLong(Employee::getSalary));
+
+        Map<String, List<Employee>> employeeByDept = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+        employeeByDept.forEach((x,y) -> System.out.println(x + " " +y));
+        System.out.println(salarySum);
     }
 
     @Override

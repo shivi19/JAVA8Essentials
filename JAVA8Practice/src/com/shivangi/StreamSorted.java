@@ -29,11 +29,13 @@ public class StreamSorted
         employeeList.add(employee4);
         employeeList.add(employee5);
 
+        // create a map of employee name and employee object from a list of employee
         Map<String, Employee> dummyMap = employeeList.stream().collect(Collectors.toMap(i->i.getEmployeeName(), x->x,(oldValue, newValue) -> newValue,
                 LinkedHashMap::new));
 
         dummyMap.forEach((x,y) -> System.out.println(x+" employee "+y));
 
+        // sort the employee object list based on the employee name
         List<Employee> sortedName = employeeList.stream().sorted((a,b) -> a.getEmployeeName().compareTo(b.getEmployeeName())).collect(Collectors.toList());
         sortedName.forEach(integer -> System.out.println(integer.getEmployeeName()));
     }

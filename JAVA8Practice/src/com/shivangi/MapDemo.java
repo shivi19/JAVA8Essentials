@@ -9,6 +9,7 @@ public class MapDemo
     public static void main(String[] args)
     {
         List<Integer> nums = Arrays.asList(1,2,3,4,5,6);
+        // perform multiplication mon each entry of list
         List<Integer> res = nums.stream().map(i -> i*2).collect(Collectors.toList());
         res.forEach(i->System.out.println(i));
         // creates a list of list

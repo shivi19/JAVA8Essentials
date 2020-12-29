@@ -8,6 +8,7 @@ public class FlatMapDemo
 {
     public static void main(String[] args)
     {
+        // convert the list in upper case.
         List<String> stringList = Stream.of("a","b").map(String::toUpperCase).collect(Collectors.toList());
         stringList.forEach(i -> System.out.println(i));
 

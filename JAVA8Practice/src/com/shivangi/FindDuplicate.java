@@ -14,6 +14,7 @@ public class FindDuplicate {
 
         Set<Integer> uniqueSet = new HashSet<>();
 
+        // get the list of unique numbers.
         Set<Integer> duplicateNumeber = numberList.stream()
                 .filter(integer -> !uniqueSet.add(integer)).collect(Collectors.toSet());
 
@@ -21,6 +22,7 @@ public class FindDuplicate {
 
         System.out.println(duplicateNumeber);
         Set<String> uniqueString = new HashSet<>();
+        // get the list of unique strings.
         Set<String> duplicateString = stringList.stream()
                 .filter(integer -> !uniqueString.add(integer)).collect(Collectors.toSet());
         duplicateString.forEach(i -> System.out.println(i));
